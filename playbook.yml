@@ -1,0 +1,11 @@
+- hosts: all
+  become: true
+
+  vars:
+    - username: hitachi
+    - homedir: /home/{{username}}
+
+  tasks:
+    - name: add a new user
+      user: name={{username}} state=present home={{homedir}}
+
