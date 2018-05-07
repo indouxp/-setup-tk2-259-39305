@@ -23,4 +23,4 @@
         dest: /usr/share/nginx/html/test.html
         mode: 0644
         group: root
-        owner: roo
+        owner: root
