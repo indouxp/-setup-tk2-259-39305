@@ -8,4 +8,10 @@
   tasks:
     - name: add a new user
       user: name={{username}} state=present home={{homedir}}
+    - name: libselinux-python
+      yum: 
+        name: libselinux-python
+        state: present
+
+- import_playbook: roles/common/tasks/nginx.yml
 

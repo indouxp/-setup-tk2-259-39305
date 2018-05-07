@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: yum install nginx
+      yum: name=nginx state=present
+    - name: setup nginx 
+      systemd:
+        name: nginx
+        state: restarted
+        enabled: true
