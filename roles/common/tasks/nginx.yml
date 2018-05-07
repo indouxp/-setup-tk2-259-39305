@@ -12,8 +12,8 @@
         name: nginx
         state: restarted
         enabled: true
-#    - name: firewalld ts:20180507 nginxのインストールで、/etc/firewalld/zones/public.xmlにhttpが設定されるのでおそらく不要
-#      firewalld:
-#        service: https
-#        permanent: true
-#        state: enabled
+    - name: firewalld
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
