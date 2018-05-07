@@ -4,9 +4,16 @@
 
   tasks:
     - name: yum install nginx
-      yum: name=nginx state=present
+      yum: 
+        name: nginx
+        state: present
     - name: setup nginx 
       systemd:
         name: nginx
         state: restarted
         enabled: true
+#    - name: firewalld ts:20180507 nginxのインストールで、/etc/firewalld/zones/public.xmlにhttpが設定されるのでおそらく不要
+#      firewalld:
+#        service: https
+#        permanent: true
+#        state: enabled
