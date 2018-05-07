@@ -17,3 +17,10 @@
         service: http
         permanent: true
         state: enabled
+    - name: test.html
+      copy:
+        src: ../files/test.html
+        dest: /user/share/nginx/html/test.html
+        mode: 0644
+        group: root
+        owner: roo
