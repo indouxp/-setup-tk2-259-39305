@@ -17,10 +17,13 @@
         service: http
         permanent: true
         state: enabled
-    - name: test.html
+    - name: copy sample html
       copy:
-        src: ../files/test.html
-        dest: /usr/share/nginx/html/test.html
+        src: ../files/{{ item.name }}
+        dest: /usr/share/nginx/html/{{ item.name }}
         mode: 0644
         group: root
         owner: root
+      with_items:
+        - name: bootstrap-01.html
+        - name: bootstrap-02.html

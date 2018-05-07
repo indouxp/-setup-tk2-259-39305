@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!--
+    REFERENCE:https://techacademy.jp/magazine/6270
+  -->
+  <meta charset="UTF-8">
+  <meta name="description" content="html5">
+  <title>Bootstrap skeleton</title>
+  <link rel="stylesheet" href="default.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <script src="default.js"></script>
+  <!-- BootstrapのCSS読み込み -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <header style="background-color:gray">Header</header>
+  <div class="container">
+    <!-- content -->
+    <div class="row" style="padding:60px 0 0 0">
+        <!-- left -->
+        <div class="col-md-3">
+            <!-- パネルで囲む -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Menu
+                </div>
+                <!-- 敢えてbodyを作らないことで、メニューを詰める -->
+                <!-- <div class="panel-body"> -->
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href=""><i class="glyphicon glyphicon-pencil"></i> submenu1</a></li>
+                    <li><a href=""><i class="glyphicon glyphicon-download"></i> submenu2</a></li>
+                    <li><a href=""><i class="glyphicon glyphicon-leaf"></i> submenu3</a></li>
+                    <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> submenu4</a></li>
+                </ul> 
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <!-- center -->
+        <div class="col-md-6" style="background-color:#0ff000">
+            center
+        </div>
+
+        <!-- right -->
+        <div class="col-md-3" style="background-color:#00f0f0">
+            right
+        </div>
+    </div>
+  </div>
+<footer style="background-color:gray">Footer</footer>
+  <!-- jQuery読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- BootstrapのJS読み込み -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
