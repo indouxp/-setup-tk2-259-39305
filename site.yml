@@ -14,4 +14,5 @@
         state: present
 
 - import_playbook: roles/common/tasks/nginx.yml
+- import_playbook: roles/common/tasks/telnet.yml
 
