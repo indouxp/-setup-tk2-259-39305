@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: True
+  become_user: indou
+  become_method: su
+
+  tasks:
+    - name: pyenv install 3.6.0
+      shell: bash -lc "~/.pyenv/bin/pyenv install 3.6.0"
+      changed_when: False
+      register: sh_status
+      failed_when: sh_status.rc not in [ 0 ]

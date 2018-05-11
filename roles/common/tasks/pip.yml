@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: yum install python-pip
+      yum: 
+        name: python-pip
+        state: present

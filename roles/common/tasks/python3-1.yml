@@ -1,0 +1,49 @@
+---
+- hosts: all
+  become: True
+  become_user: indou
+
+  tasks:
+    - name: ~/.pyenv
+      shell: rm -rf ~/.pyenv
+      changed_when: False
+      register: sh_status
+
+    - name: git clone
+      shell: git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+      changed_when: False
+      register: sh_status
+
+    - name: /home/indou/work
+      file: 
+        dest: /home/indou/work/setup
+        state: directory
+        owner: indou
+        group: indou
+        mode: 0755
+
+    - name: add2bash_profile.sh
+      copy:
+        src: ../files/add2bash_profile.sh
+        dest: /home/indou/work/setup/add2bash_profile.sh
+        owner: indou
+        group: indou
+        mode: 0755
+
+    - name: add2bash_profile.sh
+      shell: /home/indou/work/setup/add2bash_profile.sh 'export PYENV_PATH="$HOME/.pyenv"'
+      changed_when: False
+      register: sh_status
+      failed_when: sh_status.rc not in [ 0 ]
+
+    - name: add2bash_profile.sh
+      shell: /home/indou/work/setup/add2bash_profile.sh 'export PATH="$PATH:$PYENV_PATH/bin"'
+      changed_when: False
+      register: sh_status
+      failed_when: sh_status.rc not in [ 0 ]
+
+    - name: add2bash_profile.sh
+      shell: /home/indou/work/setup/add2bash_profile.sh 'eval "$(pyenv init -)"'
+      changed_when: False
+      register: sh_status
+      failed_when: sh_status.rc not in [ 0 ]
