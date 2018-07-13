@@ -1,0 +1,26 @@
+---
+#
+# http://blog.web.nifty.com/engineer/1016
+# rbenvのgit clone
+# 
+- hosts: all
+  vars_prompt:
+    - name: "password"
+      prompt: "Please Enter Your Password of Github"
+      private: yes
+
+  tasks:
+    - name: git clone
+      git:
+        repo: https://github.com/sstephenson/rbenv.git
+        dest: /home/indou/.rbenv
+      
+    - name: edit-bash_profile.sh
+      copy:
+        src: roles/rbenv/files/edit-bash_profile.sh
+        dest: /home/indou/edit-bash_profile.sh
+        mode: 0755
+        owner: indou
+
+    - name: run edit-bash_profile.sh
+      shell: sh -xv /home/indou/edit-bash_profile.sh > /tmp/log.txt 2>&1
