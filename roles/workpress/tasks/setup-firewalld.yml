@@ -1,0 +1,9 @@
+---
+
+- name: setup firewalld for workpress
+  firewalld: 
+    service: http
+    zone: public
+    permanent: true
+    state: enabled
+    immediate: true

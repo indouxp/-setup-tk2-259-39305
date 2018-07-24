@@ -19,7 +19,13 @@
 #- import_playbook: roles/common/tasks/python3-2.yml
 #- import_playbook: roles/common/tasks/pip.yml
 
-  tasks:
-    - import_tasks: roles/rbenv/tasks/rpms4rbenv.yml
+  #tasks:
+    #- import_tasks: roles/rbenv/tasks/rpms4rbenv.yml
 
-- import_playbook: git_clone.yml
+#- import_playbook: git_clone.yml
+#
+  tasks:
+    - import_tasks: roles/workpress/tasks/yum.yml
+    - import_tasks: roles/workpress/tasks/setup-phpini.yml
+    - import_tasks: roles/workpress/tasks/setup-firewalld.yml
+    - import_tasks: roles/workpress/tasks/start-httpd.yml

@@ -1,0 +1,9 @@
+---
+
+- name: edit /etc/php.ini
+  replace: 
+    dest: /etc/php.ini
+    regexp: '^;date.timezone *= *'
+    replace: 'date.timezone = "Asia/Tokyo"'
+    backup: yes
+
