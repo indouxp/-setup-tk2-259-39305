@@ -25,10 +25,10 @@
 #- import_playbook: git_clone.yml
 #
   tasks:
-    - import_tasks: roles/workpress/tasks/yum.yml
-    - import_tasks: roles/workpress/tasks/setup-phpini.yml
-    - import_tasks: roles/workpress/tasks/setup-firewalld.yml
-    - import_tasks: roles/workpress/tasks/start-httpd.yml
-    - import_tasks: roles/workpress/tasks/add-repo.yml
-    - import_tasks: roles/workpress/tasks/yum2.yml
-    - import_tasks: roles/workpress/tasks/start-maria.yml
+    - import_tasks: roles/wordpress/tasks/yum.yml
+    - import_tasks: roles/wordpress/tasks/setup-phpini.yml
+    - import_tasks: roles/wordpress/tasks/setup-firewalld.yml
+    - import_tasks: roles/wordpress/tasks/start-httpd.yml
+    - import_tasks: roles/wordpress/tasks/add-repo.yml
+    - import_tasks: roles/wordpress/tasks/yum2.yml
+    - import_tasks: roles/wordpress/tasks/start-maria.yml
