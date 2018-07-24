@@ -1,0 +1,9 @@
+---
+
+- name: mariaDB.repo
+  copy: 
+    src: roles/workpress/files/mariaDB.repo
+    dest: /etc/yum.repos.d/mariaDB.repo
+    mode: 0644
+    owner: root
+    group: root
