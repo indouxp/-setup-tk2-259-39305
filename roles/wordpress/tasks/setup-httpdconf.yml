@@ -1,0 +1,14 @@
+---
+
+- name: edit /etc/httpd/conf/httpd.conf
+  replace: 
+    dest: /etc/httpd/conf/httpd.conf
+    regexp: '^DocumentRoot "/var/www/html"'
+    replace: 'DocumentRoot "/var/www/wordpress"
+    backup: yes
+
+- name: edit /etc/httpd/conf/httpd.conf
+  shell: sed -i -e '/DocumentRoot "/var/www/wordpress"/i
+<Directory "/var/www/wordpress">
+  AllowOverride All
+</Directory>' /etc/httpd/conf/httpd.conf

@@ -32,3 +32,4 @@
     - import_tasks: roles/wordpress/tasks/add-repo.yml
     - import_tasks: roles/wordpress/tasks/yum2.yml
     - import_tasks: roles/wordpress/tasks/start-maria.yml
+    - import_tasks: roles/wordpress/tasks/setup-httpdconf.yml
